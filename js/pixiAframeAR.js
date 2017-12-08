@@ -62,7 +62,7 @@ function onComplate(loader, resources) {
 		}
 	});
 }
-
+/*
 //Select Android back camera.
 if( navigator.userAgent.indexOf("Android") > 0 ) {
 	let handleStream = s => {
@@ -91,3 +91,4 @@ if( navigator.userAgent.indexOf("Android") > 0 ) {
 		}
 	});
 }
+*/
