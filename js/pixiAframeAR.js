@@ -32,9 +32,12 @@ function onComplate(loader, resources) {
 	var plane = document.createElement('a-plane');
 	plane.setAttribute('Hiyori', '');
 	plane.setAttribute('color', '#000');
-	plane.setAttribute('height', '5');
-	plane.setAttribute('width', '5');
-	plane.setAttribute('position', '0 1.5 0');
+	plane.setAttribute('height', '10');
+	plane.setAttribute('width', '10');
+	//マーカーを基準にしたモデルの相対位置
+	plane.setAttribute('position', '0 0 0');
+	//モデルの確度。マーカーと垂直なら'0 0 0'、水平なら'-90 0 0'
+	plane.setAttribute('rotation', '-90 0 0');
 
 	var marker = document.querySelector('a-marker');
 	marker.appendChild(plane);
@@ -47,8 +50,8 @@ function onComplate(loader, resources) {
 			mesh.material = material;
 		},
 		update: function(){
-			var width = 512;
-			var height = 512;
+			var width = 2048;
+			var height = 2048;
 			app.view.style.width = width + "px";
 			app.view.style.height = height + "px";
 			app.renderer.resize(width, height);
