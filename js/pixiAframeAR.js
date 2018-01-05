@@ -50,13 +50,13 @@ function onComplate(loader, resources) {
 			mesh.material = material;
 		},
 		update: function(){
-			var width = 2048;
-			var height = 2048;
-			app.view.style.width = width + "px";
-			app.view.style.height = height + "px";
+			var width = model.textures[0].width;
+			var height = model.textures[0].height;
+			app.view.width = width + "px";
+			app.view.height = height + "px";
 			app.renderer.resize(width, height);
 			model.position = new PIXI.Point(width * 0.5, height * 0.5);
-			model.scale = new PIXI.Point(model.position.x, model.position.x);
+			model.scale = new PIXI.Point(app.view.width * 0.7, app.view.height * 0.7);
 			model.masks.resize(app.view.width, app.view.height);
 		},
 		tick: function (time, timeDelta) {
