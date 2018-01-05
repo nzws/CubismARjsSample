@@ -6,11 +6,9 @@ Cubism SDK For JavaScript の AR.js を使ったサンプルです。
 
 各サンプルに紐付くマーカーを印刷し、サンプルページを開いて、カメラでマーカーを映すとモデルが表示されます。
 
-- [ロゴ画像をマーカーにしたサンプル](https://live2d.github.io/CubismARjsSample/)
- - [Marker](https://live2d.github.io/CubismARjsSample/assets/logo_marker.png)
+- [ロゴ画像をマーカーにしたサンプル](https://live2d.github.io/CubismARjsSample/) [マーカー](https://live2d.github.io/CubismARjsSample/assets/logo_marker.png)
 
-- [サンプルページへの QR コード自体をマーカーにしたサンプル](https://live2d.github.io/CubismARjsSample/qr_marker.html)
- - [Marker](https://live2d.github.io/CubismARjsSample/assets/qr_marker.png)
+- [サンプルページへの QR コード自体をマーカーにしたサンプル](https://live2d.github.io/CubismARjsSample/qr_marker.html) [マーカー](https://live2d.github.io/CubismARjsSample/assets/qr_marker.png)
 
 ## オリジナルのモデルを使うには？
 
@@ -40,9 +38,7 @@ QR コードの作成方法に指定はありません。
 
 **QRコードを [AR.js Marker Training](https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/generator.html) でマーカー画像に指定することもできます。**
 
-## 簡単に試してみたい
-
-下記の方法を使うとサーバを用意せずに試すことができます
+## サーバーを用意せずに自分のPCだけで試すには？（要ウェブカメラ）
 
 1. Google Chrome に [Web Server for Chrome](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb?hl=ja) アドオンを追加します
 
