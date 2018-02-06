@@ -9,14 +9,14 @@ Live2D Cubism SDK For JavaScript と AR.js を組み合わせたサンプルで�
 マーカーにロゴ画像を使う例と QR コードを使う例の2種類を用意しています。
 
 ### ロゴ画像をマーカーにしたサンプル
-|[リンク](https://live2d.github.io/CubismARjsSample/)|マーカー|
+|[サンプルページのリンク](https://live2d.github.io/CubismARjsSample/)|マーカー|
 |---|---|
-|<img src="https://live2d.github.io/CubismARjsSample/assets/logo_marker.png" width="200px">|<img src="https://live2d.github.io/CubismARjsSample/assets/logo_marker.png" width="200px">|
+|<img src="https://live2d.github.io/CubismARjsSample/assets/logo_qr.png" width="300px">|<img src="https://live2d.github.io/CubismARjsSample/assets/logo_marker.png" width="300px">|
 
 ### QR コードをマーカーにしたサンプル
-|[リンク](https://live2d.github.io/CubismARjsSample/qr_marker.html)|
+|[サンプルページのリンク兼マーカー](https://live2d.github.io/CubismARjsSample/qr_marker.html)|
 |---|
-|<img src="https://live2d.github.io/CubismARjsSample/assets/qr_marker.png" width="200px">|
+|<img src="https://live2d.github.io/CubismARjsSample/assets/qr_marker.png" width="300px">|
 
 
 ## インストールするには？
@@ -77,11 +77,11 @@ AR.js の master ブランチで配布されているコードに下記の不具
 aframe-ar.js を他のバージョンに差し替える際はご注意ください。
 
 - [オリジナルのマーカーを使うための修正](https://github.com/wimvdc/AR.js/commit/950e82db6d0c3851647d429282c5ade52ee95891)
-- [アスペクトが崩れる不具合の修正](https://github.com/jeromeetienne/AR.js/pull/212/files)
+- [画面の向きで縦横比が崩れる不具合の修正](https://github.com/jeromeetienne/AR.js/pull/212/files)
 
 
 ### マーカー検出のフレームレートについて
-描画のフレームレートとは別に、 a-scene タグの maxDetectionRate でマーカーを検出するフレームレートを指定しています。
+描画のフレームレートとは別に、 a-scene タグ内でマーカーを検出するフレームレートを指定しています。
 
 検出のフレームレートを上げるとカメラを移動した際にモデルの表示位置がスムーズに追従していきますが、カメラの静止時も細かく位置や傾きが変動するため、モデルがブレて見えることがあります。
 
