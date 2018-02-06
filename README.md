@@ -4,6 +4,8 @@ Live2D Cubism SDK For JavaScript と AR.js を組み合わせたサンプルで�
 
 アプリのダウンロードやインストールを行わず、ブラウザだけで AR コンテンツを提供することが可能です。
 
+名刺やポストカード、パンフレット、チラシなど、配布物や掲示物で効果的なプロモーションを行うことができます。
+
 下記のサンプルページを開き、PC やスマートフォンのカメラでマーカーを写せば、 Live2D のモデルが表示されます。
 
 マーカーにロゴ画像を使う例と QR コードを使う例の2種類を用意しています。
@@ -39,7 +41,7 @@ Live2D Cubism SDK For JavaScript と AR.js を組み合わせたサンプルで�
 
 3. ブラウザから [http://127.0.0.1:8887/CubismARjsSample/](http://127.0.0.1:8887/CubismARjsSample/) にアクセスします
 
-4. カメラで [マーカー](https://live2d.github.io/CubismARjsSample/assets/logo_marker.png) を映すとモデルが表示されます
+4. カメラでマーカーを映すとモデルが表示されます
 
 ## オリジナルのモデルを使うには？
 
@@ -67,7 +69,19 @@ QR コードの作成方法に指定はありません。
 
 ウェブ上にQRコード生成サービスが多数提供されていますので、お好きなものをお使いください。
 
-**QRコードを [AR.js Marker Training](https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/generator.html) でマーカー画像に指定することもできます。**
+**QRコードを [AR.js Marker Training](https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/generator.html) でマーカー画像に指定することも可能です。**
+
+## 機能
+
+- マーカーに対して並行、垂直にモデルを表示
+
+- モデルの複数体表示
+
+- ランダムモーション再生
+
+- カメラ方向への視線追従
+
+- クリック、タップでのモーション切り替え
 
 ## 注意事項
 
@@ -77,6 +91,7 @@ AR.js の master ブランチで配布されているコードに下記の不具
 aframe-ar.js を他のバージョンに差し替える際はご注意ください。
 
 - [オリジナルのマーカーを使うための修正](https://github.com/wimvdc/AR.js/commit/950e82db6d0c3851647d429282c5ade52ee95891)
+
 - [画面の向きで縦横比が崩れる不具合の修正](https://github.com/jeromeetienne/AR.js/pull/212/files)
 
 
