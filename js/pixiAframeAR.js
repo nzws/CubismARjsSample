@@ -236,7 +236,7 @@ window.onload = function () {
 		orientationchanged = true;
 	}
 };
-
+/*
 //FPS‚Ì•\Ž¦
 var script = document.createElement('script');
 script.onload=function(){
@@ -249,3 +249,4 @@ script.onload=function(){
 };
 script.src='//rawgit.com/mrdoob/stats.js/master/build/stats.min.js';
 document.head.appendChild(script);
+*/
