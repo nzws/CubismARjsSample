@@ -1,14 +1,45 @@
-﻿# Cubism SDK AR.js Samples
+﻿# Live2D Cubism SDK AR.js Samples
 
-Cubism SDK For JavaScript の AR.js を使ったサンプルです。  
+Live2D Cubism SDK For JavaScript と AR.js を組み合わせたサンプルです。
+
+アプリのダウンロードやインストールを行わず、ブラウザだけで AR コンテンツを提供することが可能です。
+
+下記のサンプルページを開き、PC やスマートフォンのカメラでマーカーを写せば、 Live2D のモデルが表示されます。
 
 マーカーにロゴ画像を使う例と QR コードを使う例の2種類を用意しています。
 
-各サンプルに紐付くマーカーを印刷し、サンプルページを開いて、カメラでマーカーを映すとモデルが表示されます。
+### ロゴ画像をマーカーにしたサンプル
+|[リンク](https://live2d.github.io/CubismARjsSample/)|マーカー|
+|---|---|
+|<img src="https://live2d.github.io/CubismARjsSample/assets/logo_marker.png" width="200px">|<img src="https://live2d.github.io/CubismARjsSample/assets/logo_marker.png" width="200px">|
 
-- [ロゴ画像をマーカーにしたサンプル](https://live2d.github.io/CubismARjsSample/) （こちらの [マーカー](https://live2d.github.io/CubismARjsSample/assets/logo_marker.png) をお使いください）
+### QR コードをマーカーにしたサンプル
+|[リンク](https://live2d.github.io/CubismARjsSample/qr_marker.html)|
+|---|
+|<img src="https://live2d.github.io/CubismARjsSample/assets/qr_marker.png" width="200px">|
 
-- [QR コード自体をマーカーにしたサンプル](https://live2d.github.io/CubismARjsSample/qr_marker.html) （こちらの [マーカー](https://live2d.github.io/CubismARjsSample/assets/qr_marker.png) をお使いください）
+
+## インストールするには？
+
+1. [トップページ](https://github.com/Live2D/CubismARjsSample) の右上にある "Clone or download" ボタンを押します
+
+2. ポップアップが表示されるので、"Download ZIP" ボタンを押します
+
+3. ダウンロードした zip ファイルを解凍します
+
+4. 解凍した CubismARjsSample フォルダをウェブサーバーにアップロードします
+
+5. アップロード先の URL にアクセスし、カメラでマーカーを写せば、モデルが表示されます。
+
+## サーバーを用意せずにPCだけで試すには？（要ウェブカメラ）
+
+1. Google Chrome に [Web Server for Chrome](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb?hl=ja) アドオンを追加します
+
+2. Web Server for Chrome を実行し、CHOOSE FOLDER ボタンで CubismARjsSample のあるフォルダを選択します
+
+3. ブラウザから [http://127.0.0.1:8887/CubismARjsSample/](http://127.0.0.1:8887/CubismARjsSample/) にアクセスします
+
+4. カメラで [マーカー](https://live2d.github.io/CubismARjsSample/assets/logo_marker.png) を映すとモデルが表示されます
 
 ## オリジナルのモデルを使うには？
 
@@ -38,41 +69,74 @@ QR コードの作成方法に指定はありません。
 
 **QRコードを [AR.js Marker Training](https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/generator.html) でマーカー画像に指定することもできます。**
 
-## サーバーを用意せずに自分のPC内で試すには？（要ウェブカメラ）
-
-1. Google Chrome に [Web Server for Chrome](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb?hl=ja) アドオンを追加します
-
-2. Web Server for Chrome を実行し、CHOOSE FOLDER ボタンで CubismARjsSample のあるフォルダを選択します
-
-3. ブラウザから [http://127.0.0.1:8887/CubismARjsSample/](http://127.0.0.1:8887/CubismARjsSample/) にアクセスします
-
-4. カメラで [マーカー](https://live2d.github.io/CubismARjsSample/assets/logo_marker.png) を映すとモデルが表示されます
-
 ## 注意事項
 
-オリジナルのマーカーを使うために、AR.jsのコードを部分的に変更しています。詳しくは [こちら](https://github.com/wimvdc/AR.js/commit/950e82db6d0c3851647d429282c5ade52ee95891) をご覧ください。
+### aframe-ar.js の差し替えについて
+AR.js の master ブランチで配布されているコードに下記の不具合修正を加えています。
 
 aframe-ar.js を他のバージョンに差し替える際はご注意ください。
 
+- [オリジナルのマーカーを使うための修正](https://github.com/wimvdc/AR.js/commit/950e82db6d0c3851647d429282c5ade52ee95891)
+- [アスペクトが崩れる不具合の修正](https://github.com/jeromeetienne/AR.js/pull/212/files)
+
+
+### マーカー検出のフレームレートについて
+描画のフレームレートとは別に、 a-scene タグの maxDetectionRate でマーカーを検出するフレームレートを指定しています。
+
+検出のフレームレートを上げるとカメラを移動した際にモデルの表示位置がスムーズに追従していきますが、カメラの静止時も細かく位置や傾きが変動するため、モデルがブレて見えることがあります。
+
+検出のフレームレートはコンテンツの仕様に合わせて調整してください。
+
 ## TODO
 
-- 解像度の動的な変更
-- バックカメラの指定
-- カメラ方向への視線追従機能
-- タップでのモーション再生
+- 録画機能
+
 - 設定値の分離（jsonファイル？）
 
 ## ライセンス
+Live2D Cubism Core は Live2D Proprietary Software License で提供しています。
+ - Live2D Proprietary Software License 
+[日本語](http://www.live2d.com/eula/live2d-proprietary-software-license-agreement_jp.html) 
+[English](http://www.live2d.com/eula/live2d-proprietary-software-license-agreement_en.html) 
+   - live2dcubismcore.min.js
 
-このサンプルコードは MIT ライセンスで提供しています。
+Live2D Cubism Components は Live2D Open Software License で提供しています。
+- Live2D Open Software License 
+[日本語](http://www.live2d.com/eula/live2d-open-software-license-agreement_jp.html) 
+[English](http://www.live2d.com/eula/live2d-open-software-license-agreement_en.html) 
+   - live2dcubismframework.js
+   - live2dcubismpixi.js
 
-また、 AR.js に含まれる ARToolKit.js は LGPLv3 ライセンスとなっています。
+Live2D のサンプルモデルは Free Material License で提供しています。
+- Free Material License 
+[日本語](http://www.live2d.com/eula/live2d-free-material-license-agreement_jp.html) 
+[English](http://www.live2d.com/eula/live2d-free-material-license-agreement_en.html) 
+   - assets/Koharu/*
+   - assets/Haruto/*
+   - assets/Hiyori/*
 
-詳細については、jsartoolkit5 ライセンスと AR.js ライセンスを確認してください。
+本サンプルの Cubism Core と Cubism Components に含まれないコードは MIT License で提供しています。
+ - MIT License
+[日本語](https://ja.osdn.net/projects/opensource/wiki/licenses%2FMIT_license)
+[English](https://opensource.org/licenses/mit-license.php)
+   - pixiAframeAR.js
+   - index.html
+   - qr_marker.html
 
-jsartoolkit5 is under LGPLv3 license and additional permission.
-For legal details, be sure to check jsartoolkit5 license and AR.js license.
+直近会計年度の売上高が 1000 万円以上の事業者様がご利用になる場合は、SDKリリース(出版許諾)ライセンスに同意していただく必要がございます。 
+- [SDKリリース(出版許諾)ライセンス](http://www.live2d.com/ja/products/releaselicense) 
 
-[jsartoolkit5 license](https://github.com/artoolkit/jsartoolkit5/blob/master/LICENSE.txt)
+*All business* users must obtain a Publication License. "Business" means an entity  with the annual gross revenue more than ten million (10,000,000) JPY for the most recent fiscal year.
+- [SDK Release (Publication) License](http://www.live2d.com/en/products/releaselicense) 
 
+A-Frame は MIT License で提供されています。
+[A-Frame license](https://github.com/aframevr/aframe/blob/master/LICENSE)
+
+AR.js は MIT License で提供されています。
 [AR.js license](https://github.com/jeromeetienne/AR.js/blob/master/LICENSE.txt)
+
+PixiJS は MIT License で提供されています。
+[PixiJS license](https://github.com/pixijs/pixi.js/blob/dev/LICENSE)
+
+QRコードは(株)デンソーウェーブの登録商標です。
+
